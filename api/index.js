@@ -6,11 +6,15 @@ import authRoutes from "./routes/auth.route.js";
 
 dotenv.config();
 
-mongoose.connect(process.env.MONGO).then(
-    ()=>{
-        console.log("mongodb is connected");
-    }
-)
+mongoose.connect(process.env.MONGO, {
+    tlsAllowInvalidCertificates: true, 
+    tls: true
+}).then(() => {
+    console.log("MongoDB is connected");
+}).catch((err) => {
+    console.error("MongoDB connection error:", err);
+});
+
 
 const app = express();
 
