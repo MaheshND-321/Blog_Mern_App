@@ -47,7 +47,7 @@ export default function Header() {
           About
         </Navbar.Link>
         <Navbar.Link active={path === "/projects"} as={Link} to="/projects">
-          Sign In
+          projects
         </Navbar.Link>
       </Navbar.Collapse>
     </Navbar>
