@@ -20,7 +20,7 @@ export default function DashProfile() {
   const [imageFileUploadingError, setImageFileUploadingError] = useState(null);
   useState(null);
   const filePickerRef = useRef();
-  console.log(imageFileUploadingError, imageFileUploadingProgres);
+  // console.log(imageFileUploadingError, imageFileUploadingProgres);
 
   const handelImageChange = (e) => {
     const file = e.target.files[0];
@@ -114,7 +114,6 @@ export default function DashProfile() {
         {imageFileUploadingError && (
           <Alert color="failure">{imageFileUploadingError}</Alert>
         )}
-        <Alert color="failure"></Alert>
         <TextInput
           type="text"
           id="username"
