@@ -17,7 +17,7 @@ const userSchema = new mongoose.Schema({
     },
     profilePicture:{
         type:String,
-        default:"C:\Users\alexa\Mern_project\Blog_App\client\public\cool-profile-picture.jpg",
+        default:"https://static.vecteezy.com/system/resources/thumbnails/019/879/198/small_2x/user-icon-on-transparent-background-free-png.png",
     },
 },{timestamps:true});
 
