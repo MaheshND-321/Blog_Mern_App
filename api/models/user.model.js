@@ -19,6 +19,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:"https://static.vecteezy.com/system/resources/thumbnails/019/879/198/small_2x/user-icon-on-transparent-background-free-png.png",
     },
+    isAdmin:{
+        type: Boolean,
+        default: false
+    },
 },{timestamps:true});
 
 const User = mongoose.model("User",userSchema);
