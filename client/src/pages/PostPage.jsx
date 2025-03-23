@@ -4,12 +4,11 @@ import { Link, useParams } from "react-router-dom";
 import CallToAction from "../components/CallToAction";
 import CommentSection from "../components/CommentSection";
 
-const PostPage = () => {
+export default function PostPage() {
   const { postSlug } = useParams();
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
   const [post, setPost] = useState(null);
-  //   console.log(post);
 
   useEffect(() => {
     const fetchPost = async () => {
@@ -34,6 +33,7 @@ const PostPage = () => {
     };
     fetchPost();
   }, [postSlug]);
+
   if (loading)
     return (
       <div className="flex justify-center items-center min-h-screen">
@@ -74,6 +74,4 @@ const PostPage = () => {
       <CommentSection postId={post._id} />
     </main>
   );
-};
-
-export default PostPage;
+}
