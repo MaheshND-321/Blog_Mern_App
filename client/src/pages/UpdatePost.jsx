@@ -91,9 +91,14 @@ function UpdatePost() {
       return;
     }
 
+    if (!postId) {
+      setPublishError("Post ID is missing.");
+      return;
+    }
+
     try {
       const res = await fetch(
-        `/api/post/updatePost/${formData._id}/${currentUser._id}`,
+        `/api/post/updatePost/${postId}/${currentUser._id}`,
         {
           method: "PUT",
           headers: {

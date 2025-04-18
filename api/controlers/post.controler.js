@@ -62,7 +62,10 @@ export const getposts = async (req, res, next) => {
     });
 
     res.status(200).json({
-      posts,
+      posts: posts.map(post => ({
+        ...post._doc,
+        _id: post._id.toString(), // ensure it's sent explicitly
+      })),
       totalPosts,
       lastMonthPosts,
     });
